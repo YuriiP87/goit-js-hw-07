@@ -1,33 +1,16 @@
-class Storage {
-  #items;
+const images = [
+  { url: './images/1.png', alt: 'Image 1' },
+  { url: './images/2.png', alt: 'Image 2' },
+  { url: './images/3.png', alt: 'Image 3' },
+  { url: './images/11.png', alt: 'Image 4' },
+  { url: './images/22.png', alt: 'Image 5' },
+  { url: './images/32.png', alt: 'Image 6' },
+];
 
-  constructor(items) {
-    this.#items = items;
-  }
+const galleryEl = document.querySelector('.gallery');
 
-  getItems() {
-    return this.#items;
-  }
+const markup = images
+  .map(({ url, alt }) => `<li><img src="${url}" alt="${alt}" loading="lazy" /></li>`)
+  .join('');
 
-  addItem(newItem) {
-    this.#items.push(newItem);
-  }
-
-  removeItem(itemToRemove) {
-    this.#items = this.#items.filter(
-      item => item !== itemToRemove
-    );
-  }
-}
-
-const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
-console.log(storage.getItems()); 
-// ["Nanitoids", "Prolonger", "Antigravitator"]
-
-storage.addItem("Droid");
-console.log(storage.getItems()); 
-// ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
-
-storage.removeItem("Prolonger");
-console.log(storage.getItems()); 
-// ["Nanitoids", "Antigravitator", "Droid"]
+galleryEl.insertAdjacentHTML('beforeend', markup);
