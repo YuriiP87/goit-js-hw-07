@@ -13,11 +13,12 @@ function getRandomHexColor() {
 createBtn.addEventListener('click', () => {
   const amount = Number(inputEl.value);
 
-  if (!Number.isInteger(amount) || amount < 1 || amount > 100) return;
+  if (!Number.isInteger(amount) || amount < 1 || amount > 100) {
+    return;
+  }
 
   destroyBoxes();
   createBoxes(amount);
-
   inputEl.value = '';
 });
 
@@ -28,11 +29,11 @@ function createBoxes(amount) {
   let size = 30;
 
   for (let i = 0; i < amount; i += 1) {
-    const div = document.createElement('div');
-    div.style.width = `${size}px`;
-    div.style.height = `${size}px`;
-    div.style.backgroundColor = getRandomHexColor();
-    elements.push(div);
+    const box = document.createElement('div');
+    box.style.width = `${size}px`;
+    box.style.height = `${size}px`;
+    box.style.backgroundColor = getRandomHexColor();
+    elements.push(box);
     size += 10;
   }
 
