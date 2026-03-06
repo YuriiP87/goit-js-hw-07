@@ -1,26 +1,26 @@
 const images = [
   {
-    url: '../images/1.png',
+    url: './images/1.png',
     alt: 'Image 1',
   },
   {
-    url: '../images/2.png',
+    url: './images/2.png',
     alt: 'Image 2',
   },
   {
-    url: '../images/3.png',
+    url: './images/3.png',
     alt: 'Image 3',
   },
   {
-    url: '../images/11.png',
+    url: './images/11.png',
     alt: 'Image 4',
   },
   {
-    url: '../images/22.png',
+    url: './images/22.png',
     alt: 'Image 5',
   },
   {
-    url: '../images/32.png',
+    url: './images/32.png',
     alt: 'Image 6',
   },
 ];
